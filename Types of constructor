@@ -1,0 +1,107 @@
+package com.company;
+
+import java.sql.SQLOutput;
+
+public class Constructor {
+    /* 1  non parameterized constructor
+    public static void main(String args[])
+    {
+        Student s1 = new Student();
+    }
+
+}
+class Student
+{
+    Student()
+    {
+        System.out.println("This is non parameterized constructor");
+    }
+
+}
+
+// 2 parameterized constructor
+    public static void main(String args[])
+    {
+        Student s1 = new Student("Anjali");
+        System.out.println(s1.name);
+        Student s2 = new Student(123);
+        System.out.println(s2.rollno);
+    }
+}
+class Student
+{
+    String name;
+    int rollno;
+    Student(String name)
+    {
+        this.name = name;
+    }
+    Student(int rollno)
+    {
+        this.rollno =rollno;
+    }
+
+
+     */
+
+     // 3 copy constructor
+    public static void main(String args[]) {
+        Student s1 = new Student();
+        s1.name = "Anjali";
+        s1.rollno = 123;
+        s1.password = "abcd";
+        s1.marks[0]=90;
+        s1.marks[1]=80;
+        s1.marks[2]=70;
+
+        Student s2 = new Student(s1); // copy
+        s2.password = "xyz";
+        s1.marks[1]=85;
+        for(int i=0;i<3;i++)
+        {
+            System.out.println(s2.marks[i]);
+        }
+    }
+}
+     class Student
+     {
+       String name;
+        int rollno;
+      String password;
+      int marks[];
+
+      // shallow copy constructor
+      // Student(Student s1)
+      // {
+         //  marks = new int[3];
+          // this.name = s1.name;
+           //this.rollno = s1.rollno;
+         //  this.marks =s1.marks;
+      // }
+
+       // deep copy constructor
+         Student(Student s1)
+       {
+           marks = new int[3];
+           this.name = s1.name;
+           this.rollno = s1.rollno;
+           for(int i=0;i<marks.length;i++)
+           {
+               this.marks[i]=s1.marks[i];
+           }
+
+       }
+
+         Student()
+         {
+             marks = new int[3];
+             System.out.println("Hello");
+         }
+
+
+
+
+     }
+
+
+
