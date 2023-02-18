@@ -1,7 +1,5 @@
 package com.company;
 
-import java.sql.SQLOutput;
-
 public class Constructor {
     /* 1  non parameterized constructor
     public static void main(String args[])
